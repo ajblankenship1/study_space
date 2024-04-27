@@ -17,6 +17,7 @@ export default function Home() {
     <main >
       <header>
         <h1> Study Time</h1>
+        <div className="logo"></div>
         <p className={shadowsIntoLight.className}>Create Flahcards, Test Your Knowledge, Get Real Smart!</p>
       </header>
       <ScoreKeeper/>
