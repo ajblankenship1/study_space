@@ -1,0 +1,54 @@
+.cards-container{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 60px;
+    align-items: center;
+   
+  
+}
+
+.question-card{
+    border: 2px solid black;
+    padding: 20px;
+    margin:auto;
+    height: 175px;
+    width: 325px;
+    text-align: center;
+    font-size: 28px;
+    background-image: url("../../../public/assets/FlashCard-Question\ Background\ img.png");
+}
+
+.question-card h4{
+    font-size: 16px;
+}
+
+.answer-card{
+    border: 2px solid black;
+  padding: 20px;
+  margin:auto;
+  height: 175px;
+  width: 325px;
+  text-align: center;
+  font-size: 28px;
+  background-image: url("../../../public/assets/FlashCard-\ Answer\ Background\ img.png");
+}
+
+.answer-card h4{
+    font-size: 16px;
+}
+
+.directions-box{
+    width: 300px;
+    height: 225px;
+    text-align: center;
+    background-color: rgba(212, 18, 89, 0.7);
+    border-radius: 50%;
+    margin-left: 8px;
+    margin-right: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}

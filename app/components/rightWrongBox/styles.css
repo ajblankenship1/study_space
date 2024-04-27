@@ -1,0 +1,49 @@
+.main-container{
+    text-align: center;
+    width: 500px;
+    margin:auto;
+    padding-bottom: 100px;
+
+}
+
+.right-or-wrong-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 45px;
+    
+}
+
+.right-button{
+    width: 150px;
+    height: 75px;
+    background-image: url("../../../public/assets/right_button.png");
+    background-size: cover;
+}
+
+.wrong-button{
+    width: 150px;
+    height: 75px;
+    background-image: url("../../../public/assets/wrong_button.png");
+    background-size: cover;
+}
+
+.start-over-add-new-container{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.add-new-card-button{
+    width: 150px;
+    height: 75px;
+    background-image: url("../../../public/assets/new_card_button.png");
+    background-size: contain;
+}
+
+.start-over-button{
+    width: 150px;
+    height: 75px;
+    background-image: url("../../../public/assets/shuffle_button.png");
+    background-size: contain;
+}
