@@ -2,6 +2,8 @@
 import styles from "@/app/components/rightWrongBox/styles.css"
 
 export default function RightOrWrongBox(){
+
+
     return(
        <div className="main-container">
             <div className="right-or-wrong-container">

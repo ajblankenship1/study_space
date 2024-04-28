@@ -1,0 +1,47 @@
+.show-new-card-form{
+    height: 350px;
+    width: 450px;
+   background-color: rgba(212, 18, 89, 0.7);
+   border-radius: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border: 4px dotted yellow;
+   color: white;
+   font-size: 20px;
+
+}
+
+form input{
+    width: 370px;
+    height: 30px;
+    margin-bottom: 8px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-submit-button{
+    height:50px;
+    width: 100px;
+    background-image: url("../../../public/assets/Submit_button.png");
+   
+}
+
+.exit-button{
+    height:50px;
+    width: 100px;
+    background-image: url("../../../public/assets/close_button.png");
+}
+
+.new-card-container{
+    display:flex;
+    justify-content: center;
+}
+
+.hide-new-card-form{
+    display: none;
+}

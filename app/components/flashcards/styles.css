@@ -52,3 +52,29 @@
     color: white;
     
 }
+
+.hide-answer-card{
+    display: none;
+}
+
+
+.direction-arrows-left{
+height:40px;
+width: 200px;
+background-image: url("../../../public/assets/arrows_left\ \(2\).png");
+border-radius: 8px;
+}
+
+.direction-arrows-right{
+    height:40px;
+    width: 200px;
+    background-image: url("../../../public/assets/arrows_right.png");
+    border-radius: 8px;
+    }
+
+.direction_arrows-down{
+    height: 80px;
+    width: 200px;
+    background-image: url("../../../public/assets/down_arrows\ \(1\).png");
+    border-radius: 8px;
+}
