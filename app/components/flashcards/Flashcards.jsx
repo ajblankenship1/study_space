@@ -9,29 +9,33 @@ const shadowsIntoLight = Shadows_Into_Light({
 });
 
 export default function Flashcards(props){
-    const data = props.data;
-    const [directions, setDirections] = useState ("Click The Question Card to Begin!");
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [answerCardClass, setAnswerCardClass] = useState(shadowsIntoLight.className)
-    const [directionArrows, setDirectionArrows] = useState("direction-arrows-left")
+    const {data, setDirectionArrows, directions, setDirections, directionArrows, setCurrentIndex, currentIndex} = props;
+    
+    const [answerCardClass, setAnswerCardClass] = useState(true);
+
 
     function handleQuestionCardClick(){
-       setCurrentIndex(currentIndex + 1);
-       setAnswerCardClass("hide-answer-card");
-       setDirections("Click The Answer Card to reveal the answer!")
-       setDirectionArrows("direction-arrows-right");
+        if (currentIndex === data.length - 1){
+            setDirections("All Done! You Score 100%");
+        }else{
+            setCurrentIndex(currentIndex + 1);
+            setAnswerCardClass(false);
+            setDirections("Click The Answer Card to reveal the answer!")
+            setDirectionArrows("direction-arrows-right");
+        }
     }
 
     function handleAnswerCardClick(){
-        setAnswerCardClass(shadowsIntoLight.className);
-        setDirections("Were you Right or Wrong?");
-        setDirectionArrows("direction_arrows-down");
-
+        if (answerCardClass === false){
+            setAnswerCardClass(true);
+            setDirections("Were you Right or Wrong?");
+            setDirectionArrows("direction_arrows-down");
+        }
     }
 
     return(
         <div className='cards-container'>
-            <div className='question-card' onClick={handleQuestionCardClick}>
+            <div className="question-card" onClick={handleQuestionCardClick}>
                 <h4>Question</h4>
                 <p className={shadowsIntoLight.className}>{data[currentIndex].question}</p>
             </div>
@@ -41,7 +45,7 @@ export default function Flashcards(props){
             </div>
             <div className="answer-card" onClick={handleAnswerCardClick}>
                 <h4>Answer</h4>
-                <p className={answerCardClass}>{data[currentIndex].answer}</p>
+                <p className={answerCardClass ? shadowsIntoLight.className : "hide-answer-card" }>{data[currentIndex].answer}</p>
             </div>
         </div>  
     )

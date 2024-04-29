@@ -4,10 +4,10 @@ import { createNewFlashcard } from "@/app/server_actions/action";
 import styles from "@/app/components/newcard/styles.css";
 
 
-export default function NewCard(){
+export default function NewCard(props){
     const [questionInputValue, setQuestionInputValue] = useState("");
     const [answerInputValue, setAnswerInputValue] = useState("");
-    const [newCardDisplay, setNewCardDisplay] = useState('hide-new-card-form');
+    const {newCardDisplay, setNewCardDisplay} = props;
     
     function handleQuestionInput(event){
         setQuestionInputValue(event.target.value)
@@ -17,18 +17,21 @@ export default function NewCard(){
         setAnswerInputValue(event.target.value)
     }
 
+    function handleExitClick(){
+        setNewCardDisplay(false);
+    }
+
     async function handleFormSumbit(event){
         event.preventDefault();
         const result = await createNewFlashcard(questionInputValue, answerInputValue);
-        console.log(result);
         setQuestionInputValue("");
         setAnswerInputValue("");
     }
 
 
     return(
-    <div className={newCardDisplay}>
-        <div className="show-new-card-form">
+    <div className={ newCardDisplay ? "show-new-card-form" : "hide-new-card-form" }>
+        <div className="new-card-form">
             <h4>Add A New Flashcard!</h4>  
             <form onSubmit={handleFormSumbit}>
                 <input type="text" placeholder='Write Question Here' value={questionInputValue} onChange={handleQuestionInput}/>
@@ -37,7 +40,7 @@ export default function NewCard(){
                 <br/>
                 <div className="button-container">
                     <button className='form-submit-button'></button>
-                    <button className='exit-button'></button>
+                    <button onClick={handleExitClick}className='exit-button'></button>
                 </div>
             </form>
         </div>
